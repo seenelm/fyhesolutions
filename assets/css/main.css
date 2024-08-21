@@ -33,11 +33,34 @@ svg,img { max-width: 100%; height: auto; }
 /*-----------------------------------------------------------------
   1. >>> Nav Style
 ----------------------------------------------------------------*/
-.ds-navbar{ padding-top:20px; padding-bottom:20px; background-color: #FFF; transition-delay: 0s;transition-duration: 0.4s;transition-property: all;transition-timing-function: ease; }
-.ds-navbar.ds-fixed-header{box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25); }
-.ds-navbar.navbar-dark .navbar-nav .nav-link{ color: #000; font-size: 16px; font-weight: 400; }
-.ds-navbar.navbar-dark .navbar-nav .nav-link.ds-contact-buton-nav{ color: #FFF; display: inline-block; background-color: #000; border-radius: 3px; color: #FFF; padding: 8px 23px;}
-.ds-navbar.navbar-dark .nav-item{ margin-left: 30px; }
+.ds-navbar {
+	padding-top: 10px; /* Reduced padding to make the bar thinner */
+	padding-bottom: 10px; /* Reduced padding to make the bar thinner */
+	background-color: rgba(255, 255, 255, 0.9); /* 10% transparent */
+	transition-delay: 0s;
+	transition-duration: 0.4s;
+	transition-property: all;
+	transition-timing-function: ease;
+  }
+  .ds-navbar.ds-fixed-header {
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  }
+  .ds-navbar.navbar-dark .navbar-nav .nav-link {
+	color: #000;
+	font-size: 16px;
+	font-weight: 400;
+  }
+  .ds-navbar.navbar-dark .navbar-nav .nav-link.ds-contact-buton-nav {
+	color: #FFF;
+	display: inline-block;
+	background-color: #000;
+	border-radius: 3px;
+	color: #FFF;
+	padding: 8px 23px;
+  }
+  .ds-navbar.navbar-dark .nav-item {
+	margin-left: 30px;
+  }  
 /*-----------------------------------------------------------------
   2. >>> Headr Style
 ----------------------------------------------------------------*/
@@ -52,16 +75,54 @@ svg,img { max-width: 100%; height: auto; }
 /*-----------------------------------------------------------------
   4. >>> About Style
 ----------------------------------------------------------------*/
-.ds-about-section{ padding-top: 116px; padding-bottom: 116px; }
-.ds-heading{ font-size: 36px; line-height: 44px; }
-.ds-about-top-sec{ padding-bottom: 116px;}
-.ds-about-top-sec span{ color: rgba(0,0,0,0.7); font-size: 16px; }
-.ds-about-top-sec p{ color: rgba(0,0,0,0.7); font-size: 16px; line-height: 30px; margin-bottom: 30px; }
-.ds-about-top-sec p:last-child{ margin-bottom: 0; }
-.ds-sub-heading{ font-size: 24px; margin-bottom: 20px; }
-.ds-about-bot-sec ul{ list-style: inside; padding: 0; margin: 0; }
-.ds-about-bot-sec ul li{ color: rgba(0,0,0,0.7); font-size: 16px; line-height: 18px; margin-bottom: 10px; }
-.ds-about-bot-sec ul li:last-child{ margin-bottom: 0; }
+.ds-about-section { padding-top: 116px; padding-bottom: 116px; }
+.ds-heading { font-size: 36px; line-height: 44px; text-align: left; margin-bottom: 20px; }
+.ds-about-top-sec { padding-bottom: 50px; text-align: left; }
+.ds-about-top-sec p {color: rgba(0,0,0,0.7); font-size: 16px; line-height: 30px; margin-bottom: 10px; max-width: 500px; }
+.ds-sub-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+.ds-about-box {
+    padding: 10px; /* Added padding to create space inside each box */
+    margin: 20px; /* Add space between rows */
+    border: 1px solid black; /* Optional: Add a border around each box */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
+    background-color: #FFF; /* Background color for the boxes */
+	max-width: 400px;
+}
+.ds-about-bot-sec ul {
+    list-style: inside;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+.ds-about-bot-sec ul li {
+    color: rgba(0,0,0,0.7);
+    font-size: 16px;
+    line-height: 18px;
+    margin-bottom: 10px;
+}
+.ds-about-bot-sec ul li:last-child {
+    margin-bottom: 0;
+}
+.ds-about-box {
+    text-align: left; /* Align content to the left */
+}
+
+.ds-about-box img.ds-icon {
+    display: block;
+	margin: 10px;
+	margin-top: 20px;
+    margin-bottom: 50px; /* Space between the image and title */
+    max-width: 75px; /* Adjust the size of the image */
+    height: auto;
+}
+
+.ds-sub-heading {
+    margin-top: 10px; /* Space between the image and title */
+}
 
 /*-----------------------------------------------------------------
   5. >>> Work Style

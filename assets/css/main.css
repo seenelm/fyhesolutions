@@ -14,8 +14,8 @@ Theme Name: FYHE
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------*/
-html {font-family: 'Inter', sans-serif;background-color:#FFF}
-body {font-family: 'Inter', sans-serif;overflow-x: hidden; background-color:#FFF; font-weight:400;font-style: normal; color:#000; font-size:14px}
+html {font-family: 'Switzer', sans-serif;background-color:#FFF}
+body {font-family: 'Switzer', sans-serif;overflow-x: hidden; background-color:#000; font-weight:400;font-style: normal; color:#FFF; font-size:14px}
 a,a:hover,a:focus,i,input,button,input:focus,.transition {text-decoration: none;outline: none;transition-delay: 0s;transition-duration: 0.4s;transition-property: all;transition-timing-function: ease;box-shadow: none;}
 a{color: #000}
 iframe {border: 0;outline: none;}
@@ -25,42 +25,114 @@ img {max-width: 100%;border: none;outline: none;height: auto;}
 input,textarea {border-radius: 0;resize: none;}
 ul {padding: 0;margin: 0;}
 @font-face {
-font-family: 'Inter', sans-serif;}
+  font-family: 'Switzer';
+  src: url('/assets/fonts/switzer-regular.otf') format('otf'),
+       url('/assets/fonts/switzer-regular.otf') format('otf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('/assets/fonts/switzer-regular.otf') format('otf'),
+       url('/assets/fonts/switzer-regular.otf') format('otf');
+  font-weight: 700;
+  font-style: normal;
+}
+
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {background-color: transparent;background-image: none;color:#000;}
 /* 1.2 Typography */
-h1,h2,h3,h4,h5,h6 {font-family: 'Inter', sans-serif;}
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Switzer', sans-serif;
+  font-weight: 500; /* Use bold weight for titles */
+}
 figure{ margin: 0 }
 svg,img { max-width: 100%; height: auto; }
+
+
 /*-----------------------------------------------------------------
   1. >>> Nav Style
 ----------------------------------------------------------------*/
-.ds-navbar { padding-top: 10px; padding-bottom: 10px; background-color: rgba(255, 255, 255, 0.9); transition: all 0.4s ease; display: flex; justify-content: center; align-items: center; width: 100%;}
+.ds-navbar { padding-top: 10px; padding-bottom: 10px; background-color: #000; transition: all 0.4s ease; display: flex; justify-content: center; align-items: center; width: 100%;}
 .ds-navbar .container { display: flex; justify-content: center; align-items: center; }
-.ds-navbar.navbar-dark .navbar-nav .nav-link { color: #000; font-size: 16px; font-weight: 400; position: relative; transition: color 0.3s ease; padding: 8px 16px; border-radius: 3px; }
-.ds-navbar.navbar-dark .navbar-nav .nav-link.ds-contact-buton-nav { color: #000; overflow: hidden; }
-.ds-navbar.navbar-dark .navbar-nav .nav-link.ds-contact-buton-nav::before { content: ''; position: absolute; left: -100%; top: 0; width: 100%; height: 100%; background-color: #000; transition: left 0.4s ease; border-radius: 3px; z-index: -1;}
+.ds-navbar.navbar-dark .navbar-nav .nav-link { color: #FFF; font-size: 16px; font-weight: 400; position: relative; transition: color 0.3s ease; padding: 8px 16px; border-radius: 3px; }
+.ds-navbar.navbar-dark .navbar-nav .nav-link.ds-contact-buton-nav { color: #FFF; overflow: hidden; }
+.ds-navbar.navbar-dark .navbar-nav .nav-link.ds-contact-buton-nav::before { content: ''; position: absolute; left: -100%; top: 0; width: 100%; height: 100%; background-color: #FFF; transition: left 0.4s ease; border-radius: 3px; z-index: -1;}
 .ds-navbar.navbar-dark .navbar-nav .nav-link.ds-contact-buton-nav:hover::before { left: 0; }
-.ds-navbar.navbar-dark .navbar-nav .nav-link.ds-contact-buton-nav:hover { color: #fff; }
+.ds-navbar.navbar-dark .navbar-nav .nav-link.ds-contact-buton-nav:hover { color: #000; }
 .ds-navbar.navbar-dark .nav-item { margin-left: 30px; }
 
 /*-----------------------------------------------------------------
   2. >>> Headr Style
 ----------------------------------------------------------------*/
-.ds-header{ padding-top: 128px; padding-bottom: 119px; }
-.ds-header h1{font-size: 48px;line-height: 59px; font-weight: 200;}
-.ds-header h1 strong{ display: block; font-weight:600; }
+.ds-header{ padding-top: 128px; }
+.ds-header h1{font-size: 98px;line-height: 129px; font-weight: 400;}
+.ds-header h1 strong{ display: block; font-weight:500; }
 /*-----------------------------------------------------------------
   3. >>> Banner Style
 ----------------------------------------------------------------*/
-.ds-banner-slider{ margin: 0 -15px; }
-.ds-banner-slider figure{ padding: 0 15px; }
+/* .ds-banner-slider{ margin: 0 -15px; }
+.ds-banner-slider figure{ padding: 0 15px; } */
+/* General styling for both spline viewers */
+spline-viewer {
+    display: block;
+    border: none;
+}
+
+/* Default: Desktop version */
+.spline-desktop {
+    width: 100%; /* Adjust as needed */
+    height: 800px; /* Adjust the height */
+    margin: 20px auto; /* Center horizontally and add space from the top */
+}
+.black-desktop-cover {
+    position: absolute;
+    top: 1020px; /* Adjust based on where you want the box */
+    right: 10px; /* Adjust based on where you want the box */
+    width: 150px;
+    height: 100px;
+    background-color: black;
+    z-index: 10; /* Ensure it's above the Spline viewer */
+}
+
+/* Default: Hide mobile version */
+.spline-mobile {
+    display: none;
+}
+.black-mobile-cover {
+    display: none;
+}
+
+/* For screens smaller than 768px (Mobile) */
+@media (max-width: 768px) {
+    .spline-desktop {
+        display: none;
+    }
+    .spline-mobile {
+        display: block;
+        width: 100vw; /* Full width of the viewport */
+        height: 100vh; /* Full height of the viewport */
+        margin: 0; /* Remove margins */
+        padding: 0; /* Remove padding */
+    }
+    .black-mobile-cover {
+        position: absolute;
+        top: 1050px; /* Adjust based on where you want the box */
+        right: 0px; /* Adjust based on where you want the box */
+        width: 150px;
+        height: 100px;
+        background-color: green;
+        z-index: 0; /* Ensure it's above the Spline viewer */
+    }
+}
+
 /*-----------------------------------------------------------------
   4. >>> About Style
 ----------------------------------------------------------------*/
 .ds-about-section { padding-top: 116px; padding-bottom: 116px; }
 .ds-heading { font-size: 36px; line-height: 44px; text-align: left; margin-bottom: 20px; }
 .ds-about-top-sec { padding-bottom: 50px; text-align: left; }
-.ds-about-top-sec p { color: rgba(0,0,0,0.7); font-size: 16px; line-height: 30px; margin-bottom: 10px; max-width: 500px; }
+.ds-about-top-sec p { color: lightgray; font-size: 16px; line-height: 30px; margin-bottom: 10px; max-width: 500px; }
 
 .ds-sub-heading {
     font-size: 24px;
@@ -68,23 +140,62 @@ svg,img { max-width: 100%; height: auto; }
     text-align: left;
 }
 
-.ds-about-box {
+.card {
     padding: 10px; /* Added padding to create space inside each box */
-    margin: 20px; /* Add space between rows */
-    border: 1px solid black; /* Optional: Add a border around each box */
+    margin: 5px; /* Add space between rows */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Optional: Add a border around each box */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
-    background-color: #FFF; /* Background color for the boxes */
+    background-color: #262A26; /* Background color for the boxes */
     text-align: left; /* Align content to the left */
     max-width: 400px;
+    min-height: 300px;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative; /* Ensure it's relative so that the pseudo-element is positioned properly */
+    overflow: hidden; /* To ensure the pseudo-element doesn't overflow the box */
 }
 
-.ds-about-box img.ds-icon {
-    display: block;
-    margin: 10px;
-    margin-top: 20px;
-    margin-bottom: 50px; /* Space between the image and title */
-    max-width: 75px; /* Adjust the size of the image */
-    height: auto;
+.card:hover::before {
+    opacity: 1; /* Make the background gradient visible on hover */
+}
+
+.card::before {
+    content: "";
+    background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y),
+        rgba(212, 212, 212, 0.116),
+        transparent 40%
+    );
+    border-radius: inherit;
+    top: 0;
+    left: 0;
+    opacity: 0; 
+    height: 100%;
+    width: 100%;
+    transition: opacity 500ms;
+    z-index: 2; /* Ensure the background gradient is behind the content */
+    position: absolute; /* Ensure it's positioned relative to .card */
+}
+
+.card-image img {
+    width: 100%;
+    height: 200px; /* Adjust the height as needed */
+    object-fit: cover; /* Ensures the image covers the area */
+}
+
+.card-content {
+    padding: 15px;
+    text-align: left;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card-subheading {
+    font-size: 1rem;
+    color: #666;
 }
 
 .ds-sub-heading {
@@ -93,19 +204,19 @@ svg,img { max-width: 100%; height: auto; }
 
 /* Responsive Layout for Mobile Devices */
 @media (max-width: 767px) {
-    .ds-about-bot-sec {
+    #cards {
         display: flex;
         flex-direction: column; /* Stack all boxes in a single column */
         align-items: center; /* Center align the boxes */
     }
 
-    .ds-about-box {
+    .card {
         width: 100%; /* Make each box take the full width of its container */
         max-width: 100%; /* Override the max-width for mobile */
         margin: 10px 0; /* Adjust the spacing between boxes */
     }
 
-    .ds-about-box img.ds-icon {
+    .card img.ds-icon {
         margin-bottom: 20px; /* Adjust space between image and title on mobile */
     }
 
@@ -122,21 +233,21 @@ svg,img { max-width: 100%; height: auto; }
 /*-----------------------------------------------------------------
   5. >>> Work Style
 ----------------------------------------------------------------*/
-.ds-work-section{ padding-bottom: 120px; padding-top: 120px; background-color: #EEF4F3; }
+.ds-work-section{ padding-bottom: 120px; padding-top: 120px; background-color: #000; }
 .ds-work-slider-loop section{ padding-right: 70px; }
-.ds-brands{ color: rgba(0,0,0,0.7); font-size: 16px; display: block; margin-bottom: 39px; }
-.ds-work-slider-loop p{ color: rgba(0,0,0,0.7); font-size: 16px; line-height: 30px; }
-.ds-more-button{ display: inline-block; color: #000; font-size: 18px; font-weight: 500; margin-top: 20px; position: relative; }
+.ds-brands{ color: white; font-size: 16px; display: block; margin-bottom: 39px; }
+.ds-work-slider-loop p{ color: white; font-size: 16px; line-height: 30px; }
+.ds-more-button{ display: inline-block; color: white; font-size: 18px; font-weight: 500; margin-top: 20px; position: relative; }
 .ds-more-button i{ display: inline-block; vertical-align: middle; }
-.ds-more-button:hover,.ds-button:hover,.ds-blog-loop-sec h2 a:hover{ color: #000; }
-.ds-more-button:after,.ds-button:after{ content: ""; border-bottom: 1px solid #000; width: 0; display: block;transition-delay: 0s;transition-duration: 0.4s;transition-property: all;transition-timing-function: ease; }
+.ds-more-button:hover,.ds-button:hover,.ds-blog-loop-sec h2 a:hover{ color: #FFF; }
+.ds-more-button:after,.ds-button:after{ content: ""; border-bottom: 1px solid #FFF; width: 0; display: block;transition-delay: 0s;transition-duration: 0.4s;transition-property: all;transition-timing-function: ease; }
 .ds-more-button:hover:after,.ds-button:hover:after{ width: 100%; }
 
 .slick-dots{ list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; position: absolute; bottom: 93px; }
 .slick-dots li{ margin-right: 10px; }
 .slick-dots li:last-child{ margin-right: 0; }
-.slick-dots li button{ width: 30px; height: 6px; border: none; outline: none; padding: 0; background-color: rgba(0,0,0,0.2); font-size: 0; line-height: 0; }
-.slick-dots li.slick-active button{ background-color: #000; }
+.slick-dots li button{ width: 30px; height: 6px; border: none; outline: none; padding: 0; background-color: lightgray; font-size: 0; line-height: 0; }
+.slick-dots li.slick-active button{ background-color: #FFF; }
 
 .ds-logo-list-section{ padding-top: 120px; }
 .ds-logo-list-slider{ margin: 0 -15px; }
@@ -162,7 +273,7 @@ svg,img { max-width: 100%; height: auto; }
 @media only screen and (min-width: 0rem) {
     #contact-1150 {
         padding: var(--sectionPadding);
-        background-color: white;
+        background-color: black;
         position: relative;
         z-index: 1;
     }
@@ -191,7 +302,7 @@ svg,img { max-width: 100%; height: auto; }
     }
 
     #contact-1150 .cs-topper {
-        color: #767676;
+        color: #000;
     }
     #contact-1150 .cs-title {
         max-width: 23ch;
@@ -256,7 +367,7 @@ svg,img { max-width: 100%; height: auto; }
         font-size: 1rem;
         line-height: 1.5em;
         text-decoration: none;
-        color: #767676;
+        color: #000;
         display: block;
         position: relative;
     }
@@ -288,7 +399,6 @@ svg,img { max-width: 100%; height: auto; }
         padding: clamp(1.5rem, 5.18vw, 3rem) clamp(1rem, 4vw, 2rem);
         /* prevents flexbox from affecting height and width */
         box-sizing: border-box;
-        background-color: #fff;
         border-radius: 1rem;
         display: flex;
         justify-content: space-between;
@@ -366,7 +476,7 @@ svg,img { max-width: 100%; height: auto; }
         transition: width 0.3s;
     }
     #contact-1150 .cs-button-solid:hover {
-        color: #fff;
+        color: #000;
     }
     #contact-1150 .cs-button-solid:hover:before {
         width: 100%;
@@ -433,11 +543,12 @@ svg,img { max-width: 100%; height: auto; }
 .ds-blog-sec-hed{ display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 60px; }
 .ds-blog-sec-hed .ds-brands{ margin-bottom: 0; }
 .ds-blog-loop{transition-delay: 0s;transition-duration: 0.6s;transition-property: all;transition-timing-function: ease;}
-.ds-blog-loop-sec{ background-color: #FFF;transition-delay: 0s;transition-duration: 0.6s;transition-property: all;transition-timing-function: ease;box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.15);transform: translateY(0px); }
+.ds-blog-loop-sec img { border-top-left-radius: 15px; border-top-right-radius: 15px; }
+.ds-blog-loop-sec{ background-color: rgba(212, 212, 212, 0.116);transition-delay: 0s;transition-duration: 0.6s;transition-property: all;transition-timing-function: ease;box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.15);transform: translateY(0px); border-radius: 15px;; }
 .ds-blog-loop:hover .ds-blog-loop-sec{box-shadow: 0px 5px 60px rgba(0, 0, 0, 0.20);transform: translateY(-10px);}
 .ds-blog-loop-sec section{ padding: 30px; }
 .ds-blog-loop-sec h2{font-size: 18px; line-height: 26px; margin-bottom: 0;}
-.ds-blog-loop-sec h2 a{  color: #000; }
+.ds-blog-loop-sec h2 a{  color: #FFF; }
 
 .ds-blog-section-listing .ds-blog-loop{ margin-bottom: 60px; }
 
